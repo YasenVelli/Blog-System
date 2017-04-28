@@ -12,6 +12,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a href="/pages/about">
+                            Read Stories
+                        </a>
+                    </li>
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/article/create}">
                             Write a Story
