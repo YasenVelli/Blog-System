@@ -122,12 +122,4 @@ public class ArticleController {
 
 		return  userEntity.isAdmin() || userEntity.isAuthor(article);
 	}
-
-	@GetMapping("/pages/about")
-	public String openAbout(Model model) {
-		model.addAttribute("view", "pages/about");
-
-		return "base-layout";
-	}
-
 }

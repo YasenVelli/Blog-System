@@ -2,21 +2,11 @@
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand">MY BLOG</a>
+                <a th:href="@{/}" class="navbar-brand">Stories</a>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li >
-                        <a th:href="@{/pages/about}">
-                            Read Stories
-                        </a>
-                    </li>
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/article/create}">
                             Write a Story
