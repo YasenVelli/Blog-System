@@ -2,14 +2,13 @@
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand">Stories</a>
-
+                <a th:href="@{/}" class="navbar-brand">My Tech Blog</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/article/create}">
-                            Write a Story
+                            New Post
                         </a>
                     </li>
                     <li sec:authorize="isAuthenticated()">

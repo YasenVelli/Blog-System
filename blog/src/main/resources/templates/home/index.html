@@ -1,76 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
     <body>
-        <main xmlns:th="http://www.w3.org/1999/xhtml">
-            <div class="container body-content">
-                <div class="row">
-                    <th:block th:each="article : ${articles}">
-                        <div class="col-md-6">
-                            <article>
-                                <header>
-                                    <h2 th:text="${article.title}"></h2>
-                                </header>
-
-                                <p th:text="${article.summary}"></p>
-
-                                <small class="author" th:text="${article.author.fullName}"></small>
-
-                                <footer>
-                                    <div class="pull-right">
-                                        <a class="btn btn-default btn-xs"
-                                           th:href="@{/article/{id}(id=${article.id})}">Read more &raquo;
-                                        </a>
-                                    </div>
-                                </footer>
-                            </article>
-                        </div>
-                    </th:block>
-                </div>
-            </div>
-        </main>
-        <div class="container body-content">
+    <div class="container body-content">
+        <div class="panel panel-info">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-info ">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Rules for posting in the blog</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul>
-                                <li>
-                                    No swearing and cursing
-                                </li>
-                                <li>
-                                    Don't use CAPITAL letters only! This looks like you are screaming
-                                </li>
-                            </ul>
-                        </div>
+                <div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Rules for posting in the blog</h3>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading ">
-                            <h3 class="panel-title">About computer languages</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul>
-                                <li>
-                                    <a href="cSharp.html">C#</a>
-                                </li>
-                                <li>
-                                    <a href="#">Java</a>
-                                </li>
-                                <li>
-                                    <a href="#">JavaScript</a>
-                                </li>
-                                <li>
-                                    <a href="#">PHP</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li class="col-md-6">
+                                No swearing and cursing
+                            </li>
+                            <li class="col-md-6">
+                                Do not use CAPITAL letters only! This looks like you are screaming
+                            </li>
+                            <li class="col-md-6">
+                                If an article you post isn't yours, you should introduce the author. Otherwise it is consedered stealing
+                            </li>
+                            <li class="col-md-6">
+                                <div>
+                                    Users should not post content that is not related to this blog's subject. You don't know what the <span><a href="#sub">subject</a></span> is?
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+        <p></p>
+    <main>
+        <div class="container body-content">
+            <div class="row">
+                <th:block th:each="article : ${articles}">
+                    <div class="col-md-6">
+                        <article>
+                            <header>
+                                <h2 th:text="${article.title}"></h2>
+                            </header>
+
+                            <p th:text="${article.summary}"></p>
+
+                            <small class="author" th:text="${article.author.fullName}"></small>
+
+                            <footer>
+                                <div class="pull-right">
+                                    <a class="btn btn-default btn-xs"
+                                       th:href="@{/article/{id}(id=${article.id})}">Read more &raquo;
+                                    </a>
+                                </div>
+                            </footer>
+                        </article>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </main>
+    <p></p>
+    <div class="well well-lg" id="sub">
+        This is a blog for different technologies both software and hardware.
+    </div>
     </body>
 </html>
